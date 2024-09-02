@@ -1,0 +1,29 @@
+/*-------------------------------------------
+  Loading
+-------------------------------------------*/
+
+#loading {
+  background-color: $base;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+
+  &-screen {
+    background-color: $primary;
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    translate: 0 100vh;
+    clip-path: polygon(15% 0, 100% 0, 85% 100%, 0 100%);
+  }
+
+  p {
+    font-size: 2rem;
+    font-weight: bold;
+    @include medium {
+      font-size: 3rem;
+    }
+  }
+}

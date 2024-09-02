@@ -1,0 +1,1029 @@
+@charset "UTF-8";
+/*------------------------------------------------------------------------
+// Base
+------------------------------------------------------------------------*/
+/*-------------------------------------------
+  setting
+-------------------------------------------*/
+/*-------------------------------------------
+	mixin
+-------------------------------------------*/
+/*-------------------------------------------
+	mixin
+-------------------------------------------*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+* {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+::before,
+::after {
+  text-decoration: inherit;
+  vertical-align: inherit;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, dialog, figure, footer, header, main, menu, nav, section,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+header, footer, article, section, aside, main, nav, menu, figure, figcaption {
+  display: block;
+}
+
+span, small, strong, em, b, i {
+  color: inherit;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  border: 0;
+  vertical-align: top;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th {
+  text-align: left;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+input, textarea {
+  margin: 0;
+  padding: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+q::before,
+q::after {
+  display: none;
+}
+
+/*-------------------------------------------
+  base
+-------------------------------------------*/
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: "Roboto Condensed", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  color: #444444;
+  background: url("../img/bg-shadow.png");
+}
+
+a {
+  color: #444444;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+a:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+li {
+  list-style: none;
+}
+
+/*------------------------------------------------------------------------
+// Compornent
+------------------------------------------------------------------------*/
+/*-------------------------------------------
+  hamburger
+-------------------------------------------*/
+.hamburger {
+  position: relative;
+  background: #1760A0;
+  width: 50px;
+  height: 50px;
+  z-index: 20;
+  transition: all 0.3s ease;
+}
+.hamburger:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+@media screen and (min-width: 992px), print {
+  .hamburger {
+    width: 80px;
+    height: 80px;
+  }
+}
+.hamburger span {
+  display: inline-block;
+  transition: all 0.5s;
+  position: absolute;
+  left: 14px;
+  height: 2px;
+  border-radius: 5px;
+  background: #ffffff;
+  width: 45%;
+}
+@media screen and (min-width: 992px), print {
+  .hamburger span {
+    left: 23px;
+  }
+}
+.hamburger span:nth-of-type(1) {
+  top: 13px;
+}
+@media screen and (min-width: 992px), print {
+  .hamburger span:nth-of-type(1) {
+    top: 21px;
+  }
+}
+.hamburger span:nth-of-type(2) {
+  top: 19px;
+}
+@media screen and (min-width: 992px), print {
+  .hamburger span:nth-of-type(2) {
+    top: 32px;
+  }
+}
+.hamburger span:nth-of-type(3) {
+  top: 25px;
+}
+@media screen and (min-width: 992px), print {
+  .hamburger span:nth-of-type(3) {
+    top: 43px;
+  }
+}
+.hamburger::after {
+  content: "Menu";
+  position: absolute;
+  top: 30px;
+  left: 13px;
+  color: #ffffff;
+  font-size: 0.6rem;
+}
+@media screen and (min-width: 992px), print {
+  .hamburger::after {
+    top: 53px;
+    left: 24px;
+    font-size: 0.8rem;
+  }
+}
+
+.open .hamburger span:nth-of-type(1) {
+  top: 14px;
+  left: 14px;
+  transform: translateY(6px) rotate(-225deg);
+}
+@media screen and (min-width: 992px), print {
+  .open .hamburger span:nth-of-type(1) {
+    top: 18px;
+    left: 23px;
+    transform: translateY(11px) rotate(-225deg);
+  }
+}
+.open .hamburger span:nth-of-type(2) {
+  opacity: 0;
+}
+.open .hamburger span:nth-of-type(3) {
+  top: 26px;
+  left: 14px;
+  transform: translateY(-6px) rotate(225deg);
+}
+@media screen and (min-width: 992px), print {
+  .open .hamburger span:nth-of-type(3) {
+    top: 40px;
+    left: 23px;
+    transform: translateY(-11px) rotate(225deg);
+  }
+}
+.open .hamburger::after {
+  content: "Close";
+}
+
+/*-------------------------------------------
+  section title
+-------------------------------------------*/
+.section__title {
+  font-size: 1.75rem;
+  line-height: 1.75rem;
+  position: relative;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 992px), print {
+  .section__title {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+.section__title::before {
+  content: "";
+  width: 7px;
+  height: 2rem;
+  display: inline-block;
+  position: absolute;
+  top: -2px;
+  left: -16px;
+  background-color: #1760A0;
+}
+@media screen and (min-width: 992px), print {
+  .section__title::before {
+    width: 8px;
+    height: 3rem;
+    top: -4px;
+    left: -23px;
+  }
+}
+
+/*-------------------------------------------
+  link view more
+-------------------------------------------*/
+.link {
+  text-align: center;
+}
+.link a {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/*-------------------------------------------
+  logo
+-------------------------------------------*/
+.logo {
+  width: 200px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  line-height: 1px;
+}
+@media screen and (min-width: 768px), print {
+  .logo {
+    margin-top: 30px;
+  }
+}
+@media screen and (min-width: 992px), print {
+  .logo {
+    width: 300px;
+    margin-bottom: 30px;
+  }
+}
+
+/*-------------------------------------------
+  sns
+-------------------------------------------*/
+.sns-link {
+  display: flex;
+}
+.sns-link > li:not(:last-child) {
+  margin-right: 20px;
+}
+.sns-link__x {
+  background-color: #ffffff;
+  border-radius: 7px;
+}
+
+/*-------------------------------------------
+  bgextend
+-------------------------------------------*/
+.bgextend {
+  animation-name: bgextendAnimeBase;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+}
+
+@keyframes bgextendAnimeBase {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.bgappear {
+  animation-name: bgextendAnimeSecond;
+  animation-duration: 1s;
+  animation-delay: 0.6s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes bgextendAnimeSecond {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*右から左*/
+.bgRLextend::before {
+  animation-name: bgRLextendAnime;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #1760A0; /*伸びる背景色の設定*/
+}
+
+@keyframes bgRLextendAnime {
+  0% {
+    transform-origin: right;
+    transform: scaleX(0);
+  }
+  50% {
+    transform-origin: right;
+    transform: scaleX(1);
+  }
+  50.001% {
+    transform-origin: left;
+  }
+  100% {
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+}
+/* スクロールをしたら出現する要素にはじめに透過0を指定　*/
+.bgappearTrigger,
+.bgRLextendTrigger {
+  opacity: 0;
+}
+
+/*------------------------------------------------------------------------
+// Layout
+------------------------------------------------------------------------*/
+/*-------------------------------------------
+  wrapper
+-------------------------------------------*/
+.wrapper {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+@media screen and (min-width: 992px), print {
+  .wrapper {
+    padding: 0;
+  }
+}
+
+/*-------------------------------------------
+  section margin bottomの設定
+-------------------------------------------*/
+.section {
+  margin-bottom: 60px;
+}
+@media screen and (min-width: 992px), print {
+  .section {
+    margin-bottom: 120px;
+  }
+}
+
+/*-------------------------------------------
+  Loading
+-------------------------------------------*/
+#loading {
+  background-color: #dbedf0;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+}
+#loading-screen {
+  background-color: #1760A0;
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  translate: 0 100vh;
+  -webkit-clip-path: polygon(15% 0, 100% 0, 85% 100%, 0 100%);
+          clip-path: polygon(15% 0, 100% 0, 85% 100%, 0 100%);
+}
+#loading p {
+  font-size: 2rem;
+  font-weight: bold;
+}
+@media screen and (min-width: 768px), print {
+  #loading p {
+    font-size: 3rem;
+  }
+}
+
+/*-------------------------------------------
+  header ハンバーガーの位置固定
+-------------------------------------------*/
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+/*-------------------------------------------
+  modal
+-------------------------------------------*/
+#gnav {
+  width: 300px;
+  background-color: #444444;
+  padding: 25px;
+  position: fixed;
+  top: 0;
+  left: -300px;
+  bottom: 0;
+  opacity: 0;
+  overflow-y: auto;
+  transition: 0.5s;
+  z-index: 20;
+}
+@media screen and (min-width: 992px), print {
+  #gnav {
+    width: 400px;
+    left: -400px;
+  }
+}
+
+.open #gnav {
+  left: 0;
+  opacity: 1;
+}
+
+.gnav__list {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.gnav__item {
+  font-size: 0.875rem;
+  padding: 10px 0;
+}
+@media screen and (min-width: 992px), print {
+  .gnav__item {
+    padding: 8px 0;
+  }
+}
+.gnav__link {
+  font-weight: 300;
+  color: #ffffff;
+}
+
+#mask {
+  display: none;
+  transition: 0.5s;
+}
+
+.open #mask {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #444444;
+  opacity: 0.6;
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+/*-------------------------------------------
+  Mainvisual
+-------------------------------------------*/
+.mainvisual {
+  height: 100vh;
+  position: relative;
+  margin-bottom: 60px;
+}
+@media screen and (min-width: 768px), print {
+  .mainvisual {
+    margin-bottom: 120px;
+  }
+}
+.mainvisual__title {
+  position: absolute;
+  top: calc(50% - 90px);
+  left: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 180px;
+  width: 100vw;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+@media screen and (min-width: 768px), print {
+  .mainvisual__title {
+    align-items: flex-start;
+    padding-left: 10vw;
+  }
+}
+@media screen and (min-width: 992px), print {
+  .mainvisual__title {
+    height: 240px;
+    top: calc(50% - 120px);
+  }
+}
+.mainvisual__title-logo {
+  width: 240px;
+  line-height: 1px;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 992px), print {
+  .mainvisual__title-logo {
+    width: 400px;
+  }
+}
+.mainvisual__title-sub {
+  text-align: center;
+}
+@media screen and (min-width: 992px), print {
+  .mainvisual__title-sub {
+    font-size: 1.25rem;
+  }
+  .mainvisual__title-sub .sp_br {
+    display: none;
+  }
+}
+
+/*-------------------------------------------
+  carousel
+-------------------------------------------*/
+.fade li {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  animation: fade 15s infinite;
+}
+@media screen and (min-width: 768px), print {
+  .fade li {
+    width: 80%;
+  }
+}
+.fade li:nth-child(1) {
+  animation-delay: 0s;
+}
+.fade li:nth-child(2) {
+  animation-delay: 5s;
+}
+.fade li:nth-child(3) {
+  animation-delay: 10s;
+}
+.fade li img {
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/*-------------------------------------------
+  concept
+-------------------------------------------*/
+.concept__flex {
+  background-image: linear-gradient(to right, transparent 0%, transparent 20%, #dbedf0 0%, #1760A0 80%);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 5%;
+}
+@media screen and (min-width: 576px), print {
+  .concept__flex {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0;
+  }
+}
+@media screen and (min-width: 992px), print {
+  .concept__flex {
+    padding: 0;
+    margin: 0 auto;
+  }
+}
+.concept__body {
+  margin-bottom: 2rem;
+  width: 70vw;
+}
+@media screen and (min-width: 576px), print {
+  .concept__body {
+    margin-right: 20px;
+    margin-bottom: 0;
+    width: 50%;
+  }
+}
+.concept__text {
+  font-size: 0.875rem;
+}
+@media screen and (min-width: 992px), print {
+  .concept__text {
+    font-size: 1rem;
+  }
+}
+.concept__thumb {
+  max-width: 60vw;
+  max-height: 600px;
+  aspect-ratio: 804/1280;
+  margin-bottom: -5%;
+  margin-left: 25vw;
+}
+@media screen and (min-width: 576px), print {
+  .concept__thumb {
+    max-width: 100%;
+    margin-top: -5%;
+    margin-right: 5%;
+    margin-left: 0;
+  }
+}
+.concept__thumb img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/*-------------------------------------------
+gallery
+-------------------------------------------*/
+.gallery {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-bottom: 60px;
+}
+@media screen and (min-width: 992px), print {
+  .gallery {
+    flex-direction: row;
+    margin: 0 auto 120px auto;
+  }
+}
+.gallery-image {
+  position: relative;
+  display: none;
+}
+@media screen and (min-width: 992px), print {
+  .gallery-image {
+    display: block;
+    width: 50%;
+    margin: 0;
+  }
+}
+.gallery-image img {
+  aspect-ratio: 3/4;
+  -o-object-fit: cover;
+     object-fit: cover;
+  vertical-align: top;
+  width: 100%;
+}
+@media screen and (min-width: 992px), print {
+  .gallery-content {
+    width: 40%;
+    margin: auto;
+  }
+}
+.gallery-thumbnails {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+  margin-bottom: 30px;
+}
+@media screen and (min-width: 992px), print {
+  .gallery-thumbnails {
+    gap: 2vw;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.gallery-thumbnails img {
+  aspect-ratio: 3/4;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+@media screen and (min-width: 992px), print {
+  .gallery-thumbnails img:hover {
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+    transition: 0.4s;
+  }
+}
+
+/*-------------------------------------------
+blog
+-------------------------------------------*/
+.card-list {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(1, 1fr);
+  margin-bottom: 30px;
+}
+@media screen and (min-width: 992px), print {
+  .card-list {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+  }
+}
+
+.card {
+  display: block;
+  border: 1px solid #e7e7e7;
+  border-radius: 5px;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+}
+.card:hover img {
+  transform: scale(1.1);
+}
+.card__thumb {
+  position: relative;
+  transition: 0.6s;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+.card__thumb img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px 5px 0 0;
+  transition: transform 0.6s ease;
+}
+.card__body {
+  margin: 20px;
+}
+.card__tit {
+  font-size: 1.2rem;
+}
+.card__date {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #1760A0;
+}
+
+/*-------------------------------------------
+Profile
+-------------------------------------------*/
+.profile__flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 768px), print {
+  .profile__flex {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+.profile__ph {
+  margin: 1rem 0;
+}
+.profile__ph img {
+  border-radius: 50%;
+}
+.profile__body {
+  padding: 0 5vw;
+}
+.profile__name {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.profile__text {
+  margin-bottom: 1rem;
+}
+.profile .sns-link {
+  justify-content: center;
+}
+@media screen and (min-width: 768px), print {
+  .profile .sns-link {
+    justify-content: flex-start;
+  }
+}
+
+/*----------------------------------------
+	footer
+----------------------------------------*/
+.footer {
+  background-color: #1760A0;
+  padding: 1rem 0;
+}
+.footer .menu {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+.footer .menu li {
+  font-size: 0.875rem;
+  padding: 0 20px;
+  border-right: 1px solid #ffffff;
+}
+.footer .menu li:last-child {
+  border-right: none;
+}
+.footer .menu a {
+  color: #ffffff;
+  font-size: 0.875rem;
+}
+.footer .copyright {
+  font-size: 0.75rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+/*-------------------------------------------
+  works
+-------------------------------------------*/
+@media screen and (min-width: 992px), print {
+  .works__layout {
+    height: calc(100vh - 165px);
+  }
+}
+.works__list {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media screen and (min-width: 992px), print {
+  .works__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/*-------------------------------------------
+  blog-page
+-------------------------------------------*/
+@media screen and (min-width: 992px), print {
+  .blog__layout-top {
+    height: calc(100vh - 165px);
+  }
+}
+.blog__header {
+  margin-bottom: 20px;
+}
+.blog__title {
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 992px), print {
+  .blog__title {
+    font-size: 2rem;
+  }
+}
+.blog__date {
+  color: #1760A0;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+.blog__main > li:not(:last-child) {
+  margin-bottom: 4rem;
+}
+.blog__flex {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 992px), print {
+  .blog__flex {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 992px), print {
+  .blog__body, .blog__thumb {
+    width: 48%;
+  }
+}
+.blog__body {
+  margin-bottom: 2rem;
+}
+.blog__body > li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 992px), print {
+  .blog__body {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 992px), print {
+  ._reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+/*------------------------------------------------------------------------
+// Animation
+------------------------------------------------------------------------*/
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/*-------------------------------------------
+  delay-time
+-------------------------------------------*/
+.delay-time02 {
+  animation-delay: 0.2s;
+}
+
+.delay-time04 {
+  animation-delay: 0.4s;
+}
+
+/*-------------------------------------------
+  scroll
+-------------------------------------------*/
+.scrolldown1 {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  height: 50px;
+}
+@media screen and (min-width: 768px), print {
+  .scrolldown1 {
+    left: 10%;
+  }
+}
+.scrolldown1 span {
+  position: absolute;
+  left: -20px;
+  top: -15px;
+  color: #444444;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+}
+.scrolldown1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 30px;
+  background: #444444;
+  animation: pathmove 1.4s ease-in-out infinite;
+  opacity: 0;
+}
+
+@keyframes pathmove {
+  0% {
+    height: 0;
+    top: 0;
+    opacity: 0;
+  }
+  30% {
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    height: 0;
+    top: 50px;
+    opacity: 0;
+  }
+}/*# sourceMappingURL=common.css.map */

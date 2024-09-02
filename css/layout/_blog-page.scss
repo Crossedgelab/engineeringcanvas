@@ -1,0 +1,71 @@
+/*-------------------------------------------
+  blog-page
+-------------------------------------------*/
+.blog {
+  // Blog全体ページ
+  &__layout-top {
+    @include large {
+      height: calc(100vh - 165px);
+    }
+  }
+
+  // Blog全体ページ、個別ページ共通
+  &__header {
+    margin-bottom: 20px;
+  }
+
+    // Blog個別ページ用
+  &__title {
+    font-size: 1.5rem;
+
+    @include large {
+      font-size: 2rem;
+    }
+  }
+
+  &__date {
+    color: $primary;
+    font-size: 0.875rem;
+    font-weight: bold;
+  }
+
+  &__main {
+    &>li:not(:last-child) {
+      margin-bottom: 4rem;
+      // 1段目と２段目の間のマージン
+    }
+  }
+
+  &__flex {
+    display: flex;
+    flex-direction: column;
+
+    @include large {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__body,
+  &__thumb {
+    @include large {
+      width: 48%;
+    }
+  }
+  &__body {
+    &>li:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+    margin-bottom: 2rem;
+    @include large {
+      margin-bottom: 0;
+    }
+  }
+}
+
+._reverse {
+  @include large {
+    flex-direction: row-reverse;
+  }
+}

@@ -1,0 +1,34 @@
+/*----------------------------------------
+	footer
+----------------------------------------*/
+.footer {
+  background-color: $primary;
+  padding: 1rem 0;
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+
+    li {
+      font-size: 0.875rem;
+      padding: 0 20px;
+      border-right: 1px solid $white;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+
+    a {
+      color: $white;
+      font-size: 0.875rem;
+    }
+  }
+
+  .copyright {
+    font-size: 0.75rem;
+    color: $white;
+    text-align: center;
+  }
+}

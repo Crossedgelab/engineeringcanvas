@@ -1,0 +1,33 @@
+/*-------------------------------------------
+  base
+-------------------------------------------*/
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: "Roboto Condensed", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  color: $black;
+  background: url('../img/bg-shadow.png');
+}
+
+a {
+  color: $black;
+  transition: all 0.3s ease;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+li {
+  list-style: none;
+}

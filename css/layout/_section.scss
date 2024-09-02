@@ -1,0 +1,10 @@
+/*-------------------------------------------
+  section margin bottomの設定
+-------------------------------------------*/
+
+.section {
+  margin-bottom: 60px;
+  @include large {
+    margin-bottom: 120px;
+  }
+}

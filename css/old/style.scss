@@ -1,0 +1,584 @@
+@charset "UTF-8";
+@import "colors.scss";
+@import "keyframes.scss";
+
+/*
+VARIABLES
+================================================ */
+:root {
+  --light-green: #d5edeb;
+  --green: #63dbd0;
+  --brown: #403632;
+  --light-grey: #eee;
+  --white: #fff;
+  --oswald-font: 'Oswald', sans-serif;
+}
+
+/*-------------------------------------------
+common
+-------------------------------------------*/
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: "Roboto Condensed", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  color: $black;
+  background: url('../img/bg-shadow.png');
+}
+
+a {
+  color: $black;
+  transition: all 0.3s ease;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+li {
+  list-style: none;
+}
+
+// メディアクエリ
+$bp: 960px;
+
+@mixin mq-min {
+  @media (min-width: ($bp)) {
+    @content;
+  }
+}
+
+@mixin mq-max {
+  @media (max-width: ($bp)) {
+    @content;
+  }
+}
+
+.section__title {
+  font-size: 1.75rem;
+
+  @include mq-min {
+    font-size: 2.5rem;
+  }
+}
+
+/*
+LAYOUT
+================================================ */
+.wrapper {
+  max-width: 38rem;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+
+/*-------------------------------------------
+Loading
+-------------------------------------------*/
+#loading {
+  background-color: $base;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+
+  &-screen {
+    background-color: $primary;
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    translate: 0 100vh;
+    clip-path: polygon(15% 0, 100% 0, 85% 100%, 0 100%);
+  }
+
+  p {
+    font-size: 2rem;
+    font-weight: bold;
+    @include mq-min {
+      font-size: 3rem;
+    }
+  }
+}
+
+/*-------------------------------------------
+ナビゲーション
+-------------------------------------------*/
+// ハンバーガー
+.hamburger {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: fixed;
+  top: 24px;
+  right: 30px;
+  transition: 0.5s;
+  z-index: 20;
+
+  span {
+    width: 30px;
+    height: 2px;
+    background-color: $black;
+    border-radius: 4px;
+    display: block;
+    position: absolute;
+    left: 0;
+    transition: 0.5s;
+    opacity: 1;
+
+    &:nth-child(1) {
+      top: 4px;
+    }
+
+    &:nth-child(2) {
+      top: 14px;
+    }
+
+    &:nth-child(3) {
+      bottom: 4px;
+    }
+  }
+}
+
+.open {
+  .hamburger {
+    span {
+      background-color: $white;
+
+      &:nth-child(1) {
+        transform: translateY(10px) rotate(-315deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: translateY(-10px) rotate(315deg);
+      }
+    }
+  }
+}
+
+// モーダルウィンドウ
+#mask {
+  display: none;
+  transition: 0.5s;
+}
+
+.open {
+  #mask {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: $black;
+    opacity: 0.6;
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+}
+
+
+// ナビゲーション
+#gnav {
+  width: 300px;
+  background-color: $black;
+  padding: 25px;
+  position: fixed;
+  top: 0;
+  left: -300px;
+  bottom: 0;
+  opacity: 0;
+  overflow-y: auto;
+  transition: 0.5s;
+  z-index: 20;
+}
+
+.open {
+  #gnav {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+.gnav {
+  &__list {
+    margin-bottom: 30px;
+
+    @include mq-max {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__item {
+    font-size: 0.875rem;
+    padding: 8px 0;
+
+    @include mq-max {
+      padding: 10px 0;
+    }
+  }
+
+  &__link {
+    font-weight: 300;
+    color: $white;
+  }
+}
+
+/*-------------------------------------------
+Mainvisual
+-------------------------------------------*/
+#mainvisual {
+  height: 100vh;
+  position: relative;
+
+  .text {
+    position: absolute;
+    width: calc(100% - 32px);
+    top: calc(100vh - 110px);
+    left: 16px;
+    z-index: 5;
+    text-align: center;
+
+    @include mq-min {
+      top: calc(50vh - 3.5rem);
+      left: 5%;
+      width: auto;
+      background-color: rgba(255, 255, 255, .5);
+      padding: 15px;
+    }
+
+    .title {
+      font-size: 2rem;
+      font-weight: bold;
+
+      @include mq-min {
+        font-size: 3rem;
+      }
+
+      &-sub {
+        font-size: 1rem;
+
+        @include mq-min {
+          font-size: 1.5rem;
+
+          .sp_br {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+// カルーセルスライダー
+.fade {
+  li {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    animation: fade 15s infinite;
+
+    @include mq-min {
+      width: 80%;
+    }
+
+    &:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    &:nth-child(2) {
+      animation-delay: 5s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 10s;
+    }
+
+    img {
+      width: 100%;
+      height: calc(100vh - 120px);
+      object-fit: cover;
+
+      @include mq-min {
+        height: 100vh;
+      }
+    }
+  }
+}
+
+
+/*
+CONCEPT
+================================================ */
+.concept {
+  // margin: 8rem 0;
+  margin-top: 120px;
+  background-image: linear-gradient(to right,
+      transparent 0%,
+      transparent 20%,
+      $base 20%,
+      $base 100%);
+
+  @include mq-min {
+    display: flex;
+    margin: 16rem 0;
+  }
+
+  p {
+    text-align: left;
+    margin-bottom: 2rem;
+
+    @include mq-min {
+      text-align-last: left;
+      font-size: 1.25rem;
+    }
+  }
+
+  img {
+    @include mq-min {
+      margin: -6rem 0;
+      max-width: 38rem;
+    }
+  }
+}
+
+/*
+GALLERY
+================================================ */
+.gallery {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-top: 120px;
+
+  @include mq-min {
+    flex-direction: row;
+  }
+
+  &-image {
+    width: min(100%, calc(38rem - 2rem));
+    margin: auto;
+    position: relative;
+
+    @include mq-min {
+      width: 50vw;
+      margin: 0;
+    }
+
+    &::after {
+      display: block;
+      content: '';
+      width: calc(100% - 2rem);
+      height: calc(100% - 2.5rem);
+      z-index: 3;
+      border: 3px solid var(--white);
+      top: 1rem;
+      left: 1rem;
+      position: absolute;
+    }
+
+    img {
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      width: 100%;
+
+      @include mq-min {
+        height: 100vh;
+      }
+    }
+  }
+
+  &-content {
+    @include mq-min {
+      width: 30vw;
+    }
+  }
+
+  &-thumbnails {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(5, 1fr);
+    list-style: none;
+    margin: 1rem 0;
+
+    @include mq-min {
+      gap: 2vw;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    img {
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    @include mq-min {
+      img:hover {
+        box-shadow: 0 0 1rem rgba(0, 0, 0, .4);
+        transition: .4s;
+      }
+    }
+  }
+}
+
+
+/*----------------------------------------
+	card本体
+----------------------------------------*/
+.blog {
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin: 120px auto 0 auto;
+}
+
+.card-list {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(1, 1fr);
+  margin-top: 20px;
+
+  @include mq-min {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+  }
+}
+
+.card {
+  display: block;
+  border: 1px solid #e7e7e7;
+  border-radius: 5px;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+
+  &__thumb {
+    position: relative;
+    transition: .3s;
+    aspect-ratio: 16/9;
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      max-width: none;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 5px 5px 0 0;
+    }
+  }
+
+  &__body {
+    margin: 20px;
+  }
+
+  &__tit {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  &__date {
+    font-size: 0.75rem;
+    font-weight: bold;
+  }
+
+  // &__btn {
+  //   margin-top: 10px;
+  //   padding-top: 10px;
+  //   border-top: 1px dashed #ccc;
+  //   text-align: right;
+  // }
+}
+
+/*----------------------------------------
+	profile
+----------------------------------------*/
+.profile {
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin: 120px auto 120px auto;
+
+  &__body {
+    text-align: center;
+  }
+
+  &__ph {
+    margin: 2rem 0;
+
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  &__sns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 40px;
+
+    &>li {
+      width: 80px;
+      margin: 0 20px;
+    }
+  }
+}
+
+/*----------------------------------------
+	footer
+----------------------------------------*/
+.footer {
+  background-color: $primary;
+  padding: 20px 0;
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 60px 0;
+
+    @include mq-max {
+      flex-wrap: wrap;
+    }
+
+    li {
+      font-size: 0.875rem;
+      padding: 0 20px;
+      border-right: 1px solid $white;
+
+      &:last-child {
+        border-right: none;
+      }
+
+      @include mq-max {
+        margin-bottom: 10px;
+      }
+    }
+
+    a {
+      color: #fff;
+      font-size: 0.875rem;
+    }
+  }
+
+  .copyright {
+    font-size: 0.75rem;
+    color: $white;
+    text-align: center;
+  }
+}

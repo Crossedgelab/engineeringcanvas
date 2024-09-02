@@ -1,0 +1,69 @@
+/*-------------------------------------------
+  concept
+-------------------------------------------*/
+
+.concept {
+  &__flex {
+    background-image: linear-gradient(to right,
+        transparent 0%,
+        transparent 20%,
+        $base 0%,
+        $primary 80%);
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding-top: 5%;
+
+    @include small {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0;
+    }
+
+    @include large {
+      padding: 0;
+      margin: 0 auto;
+    }
+  }
+
+  &__body {
+    margin-bottom: 2rem;
+    width: 70vw;
+
+    @include small {
+      margin-right: 20px;
+      margin-bottom: 0;
+      width: 50%;
+    }
+  }
+
+  &__text {
+    font-size: 0.875rem;
+
+    @include large {
+      font-size: 1rem;
+    }
+  }
+
+  &__thumb {
+    max-width: 60vw;
+    max-height: 600px;
+    aspect-ratio: 804/1280;
+    margin-bottom: -5%;
+    margin-left: 25vw;
+
+    @include small {
+      max-width: 100%;
+      margin-top: -5%;
+      margin-right: 5%;
+      margin-left: 0;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

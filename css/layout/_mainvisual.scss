@@ -1,0 +1,60 @@
+/*-------------------------------------------
+  Mainvisual
+-------------------------------------------*/
+
+.mainvisual {
+  height: 100vh;
+  position: relative;
+  margin-bottom: 60px;
+
+  @include medium {
+    margin-bottom: 120px;
+  }
+
+  &__title {
+    position: absolute;
+    top: calc(50% - 90px);
+    left: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 180px;
+    width: 100vw;
+    background-color: rgba(255, 255, 255, .5);
+
+    @include medium {
+      align-items: flex-start;
+      padding-left: 10vw;
+    }
+
+    @include large {
+      height: 240px;
+      top: calc(50% - 120px);
+    }
+
+    &-logo {
+      width: 240px;
+      line-height: 1px;
+      margin-bottom: 10px;
+
+      @include large {
+        width: 400px;
+      }
+    }
+
+
+    &-sub {
+      text-align: center;
+
+      @include large {
+        font-size: 1.25rem;
+
+        .sp_br {
+          display: none;
+        }
+      }
+    }
+  }
+}
