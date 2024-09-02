@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="デジタルな未来のために、エンジニアリングの心で描く。「Engineering Canvas」は、機械設計者の創造的な才能と技術の力強い融合です。革新的なプロジェクトと美的なウェブデザインが、未来への挑戦を提示します。">
+  <title>engineering canvas</title>
+  <!-- <link rel="icon" href="assets/img/favicon.ico"> -->
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+  <link rel="stylesheet" href="css/common.css">
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link type="text/css" rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700|Google+Sans+Text:400&amp;lang=ja">
+  <link type="text/css" rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Google+Sans+Text:400&amp;text=%E2%86%90%E2%86%92%E2%86%91%E2%86%93&amp;lang=ja">
+</head>
+
+<body>
+  <!-- ローディング画面 -->
+  <div id="loading">
+    <p>engineering canvas</p>
+    <div id="loading-screen"></div>
+  </div>
+
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="gnav">
+      <div class="logo">
+        <img src="img/logo.png" alt="engineering canvas ロゴ">
+      </div>
+      <ul class="gnav__list">
+        <li class="gnav__item"><a href="index.html" class="gnav__link">HOME</a></li>
+        <li class="gnav__item"><a href="demo/works.html" class="gnav__link">WORKS</a></li>
+        <li class="gnav__item"><a href="blog/blog.html" class="gnav__link">BLOG</a></li>
+      </ul>
+      <ul class="sns-link">
+        <!-- <li class="sns-link__x">
+          <a href="#" target="_blank">
+            <img src="img/sns/sns_x-crop.png" alt="Twitter" width="40" height="40" loading="lazy">
+          </a>
+        </li> -->
+        <li class="sns-link__insta">
+          <a href="https://www.instagram.com/n_cafe_life78?igsh=dnR0Z25udTdyeGdu&utm_source=qr" target="_blank">
+            <img src="img/sns/sns_insta.png" alt="Instagram" width="40" height="40" loading="lazy">
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mask"></div>
+  </header>
+
+  <!-- メインビジュアル -->
+  <section class="mainvisual section">
+    <div class="mainvisual__title">
+      <h1 class="mainvisual__title-logo">
+        <img src="img/logo.png" alt="engineering canvas ロゴ">
+      </h1>
+      <p class="mainvisual__title-sub">機械工学エンジニアが作る<br class="sp_br">webデザインの世界</p>
+    </div>
+    <ul class="fade">
+      <li><img src="img/mainvisual1.jpg" alt="スライダー1"></li>
+      <li><img src="img/mainvisual2.jpg" alt="スライダー2"></li>
+      <li><img src="img/mainvisual3.jpg" alt="スライダー3"></li>
+    </ul>
+    <div class="scrolldown1"><span>Scroll</span></div>
+  </section>
+
+  <!-- コンセプト -->
+  <section class="concept wrapper section">
+    <div class="concept__flex">
+      <div class="concept__body">
+        <h2 class="section__title">
+          <span class="bgextend bgRLextendTrigger">
+            <span class="bgappearTrigger">Concept</span>
+          </span>
+        </h2>
+        <p class="concept__text fadein">
+          engineering canvasは、
+          機械工学エンジニアがデザインするロジカルでクリエイティブ空間。<br>
+          技術とデザインが調和し、洗練されたウェブデザインの世界を創造します。
+        </p>
+      </div>
+      <div class="concept__thumb fadein delay-time02">
+        <img src="img/concept.jpg" alt="美しいエンジン">
+      </div>
+    </div>
+  </section>
+
+  <!-- Works -->
+  <section class="gallery wrapper section">
+    <div class="gallery-image">
+      <img src="img/PlsSelThumb.png" alt="サムネールを選択してください">
+    </div>
+    <div class="gallery-content">
+      <h2 class="section__title">
+        <span class="bgextend bgRLextendTrigger">
+          <span class="bgappearTrigger">Works</span>
+        </span>
+      </h2>
+      <ul class="gallery-thumbnails">
+        <li class="fadein delay-time02"><a href="demo/05_corporate/index.html" target="_blank"><img
+              src="img/corporate.webp" alt="demoコーポレートサイト"></a></li>
+        <li class="fadein"><a href="demo/04_SouthIsland/SouthIsland.html" target="_blank"><img
+              src="img/southisland.webp" alt="demoバケーション"></a></li>
+        <li class="fadein"><a href="demo/03_GlamourLuxeSalon/index.html" target="_blank"><img
+              src="img/GlamourLuxeSalon.webp" alt="demoサロン"></a></li>
+        <li class="fadein"><img src="img/comingsoon.png" alt="comingsoon"></li>
+      </ul>
+      <div class="link"><a href="demo/works.html">View more</a></div>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section class="blogLP wrapper section">
+    <h2 class="section__title">
+      <span class="bgextend bgRLextendTrigger">
+        <span class="bgappearTrigger">Blog</span>
+      </span>
+    </h2>
+    <div class="card-list card-list--col3">
+      <div class="card-list__item fadein">
+        <a href="blog/001.html" class="card">
+          <div class="card__thumb"><img src="blog/img/img001_1.JPG" alt="海岸のヤシの木"></div>
+          <div class="card__body">
+            <h3 class="card__tit">#001 はじめまして</h3>
+            <time class="card__date" datetime="2024-08-16">2024-08-16</time>
+            <p class="card__txt">はじめまして！NABEと申します。愛知県在住、40代男性です。</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="link"><a href="blog/blog.html">View more</a></div>
+  </section>
+
+  <!-- profile -->
+  <section class="profile wrapper section">
+    <h2 class="section__title">
+      <span class="bgextend bgRLextendTrigger">
+        <span class="bgappearTrigger">Profile</span>
+      </span>
+    </h2>
+    <div class="profile__flex">
+      <figure class="profile__ph">
+        <img src="img/profile.jpeg" alt="プロフィール写真" width="140" height="140" loading="lazy">
+      </figure>
+      <div class="profile__body">
+        <h3 class="profile__name">NABE</h3>
+        <p class="profile__text">愛知県在住　40代男性<br>
+          本業：機械工学エンジニア<br>
+          webデザインからコーディングまで<br>幅広くweb制作にチャレンジ</p>
+        <ul class="sns-link">
+          <!-- <li class="sns-link__x">
+            <a href="#" target="_blank">
+              <img src="img/sns/sns_x-crop.png" alt="Twitter" width="40" height="40" loading="lazy">
+            </a>
+          </li> -->
+          <li class="sns-link__insta">
+            <a href="https://www.instagram.com/n_cafe_life78?igsh=dnR0Z25udTdyeGdu&utm_source=qr" target="_blank">
+              <img src="img/sns/sns_insta.png" alt="Instagram" width="40" height="40" loading="lazy">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="footer">
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="demo/works.html">Works</a></li>
+      <li><a href="blog/blog.html">Blog</a></li>
+    </ul>
+    <p class="copyright">
+      &copy; 2024 engineering canvas All Rights Reserved.
+    </p>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/hamburger.js"></script>
+  <script src="js/loading.js"></script>
+  <script src="js/bgextend.js"></script>
+  <script src="js/cardheight.js"></script>
+  <script src="js/fadein.js"></script>
+  <script src="js/thumbimage.js"></script>
+</body>
+
+</html>
